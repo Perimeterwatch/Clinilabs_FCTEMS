@@ -96,12 +96,17 @@ if (-not (Test-Path $directory)) {
     New-Item -ItemType Directory -Path $directory
 }
 
+# Define the credentials (replace with your actual username and password)
+$username = "Clinilabs-DC\dcdmastr"
+$password = ConvertTo-SecureString "GnZa2b3sQ!" -AsPlainText -Force
+$credential = New-Object System.Management.Automation.PSCredential ($username, $password)
+
 # Parameter definitions for msiexec:
 # REQUIRED FIELDS:
 #============================================================================
 $logfile = "C:\ProgramData\SecureWorks\TEMP_Taegis_Agent_Install_Log.txt"
 $REGISTRATIONSERVER = "REGISTRATIONSERVER=reg.d.taegiscloud.com"
-$REGISTRATIONKEY = "REGISTRATIONKEY=MTQ4NjMzfGtVSHZxQmQ3djJXOEp1d2xuUVMybC1o"
+$REGISTRATIONKEY = "REGISTRATIONKEY=MTQ4NjMzfE0yQnM2cWR3blZLM0dBYjBMSTdCTmt5"
 $msiUrl = "https://github.com/Perimeterwatch/westmonroe/blob/main/taegis-agent_en_2.2.12_x64.msi?raw=true"
 $msiPath = "C:\taegis-agent_en_2.2.12_x64.msi"
 $DNS = "DNS=8.8.8.8"
