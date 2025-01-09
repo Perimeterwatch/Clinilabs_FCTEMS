@@ -108,7 +108,7 @@ $logfile = "C:\ProgramData\SecureWorks\TEMP_Taegis_Agent_Install_Log.txt"
 $REGISTRATIONSERVER = "REGISTRATIONSERVER=reg.d.taegiscloud.com"
 $REGISTRATIONKEY = "REGISTRATIONKEY=MTQ4NjMzfE0yQnM2cWR3blZLM0dBYjBMSTdCTmt5"
 $msiUrl = "https://github.com/Perimeterwatch/westmonroe/blob/main/taegis-agent_en_2.2.12_x64.msi?raw=true"
-$msiPath = "C:\taegis-agent_en_2.2.12_x64.msi"
+$msiPath = "C:\Temp\taegis-agent_en_2.2.12_x64.msi"
 $DNS = "DNS=8.8.8.8"
 #============================================================================
 # OPTIONAL FIELDS:
