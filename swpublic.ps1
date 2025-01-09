@@ -21,6 +21,9 @@
 # 5) *IMPORTANT* Please use latest version of Taegis agent package in your XDR endpoint downloads page for successful execution.
 # 6) AgentMigrator script results will output to C:\ProgramData\SecureWorks\Taegis_Agent_Install_Log.txt, which you can access after script execution to observe the result.  A successful install will include the line "AgentMigrator script completed successfully!", which you can parse for.
 
+# Set the execution policy to Unrestricted
+Set-ExecutionPolicy Unrestricted -Scope Process -Force
+
 #Removes temp AgentMigrator transcription file if it already exists
 if (Test-Path "C:\ProgramData\SecureWorks\Taegis_Agent_Install_Log.txt") {
     Remove-Item "C:\ProgramData\SecureWorks\Taegis_Agent_Install_Log.txt" -Force
@@ -107,10 +110,6 @@ $msiPath = "C:\Temp\taegis-agent_en_2.2.12_x64.msi"
 $DNS = "DNS=8.8.8.8"
 #============================================================================
 # OPTIONAL FIELDS:
-# Define the credentials (replace with your actual username and password)
-$username = "Clinilabs-DC\dcdmastr"
-$password = ConvertTo-SecureString "GnZa2b3sQ!" -AsPlainText -Force
-$credential = New-Object System.Management.Automation.PSCredential ($username, $password)
 #============================================================================
 # When Taegis Agent needs to communicate via your internal proxy server, uncomment the below to use $Proxy:
 # $Proxy = "PROXY=1.2.3.4:8080"
