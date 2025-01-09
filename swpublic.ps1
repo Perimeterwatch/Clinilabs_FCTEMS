@@ -96,11 +96,6 @@ if (-not (Test-Path $directory)) {
     New-Item -ItemType Directory -Path $directory
 }
 
-# Define the credentials (replace with your actual username and password)
-$username = "Clinilabs-DC\dcdmastr"
-$password = ConvertTo-SecureString "GnZa2b3sQ!" -AsPlainText -Force
-$credential = New-Object System.Management.Automation.PSCredential ($username, $password)
-
 # Parameter definitions for msiexec:
 # REQUIRED FIELDS:
 #============================================================================
@@ -112,6 +107,10 @@ $msiPath = "C:\Temp\taegis-agent_en_2.2.12_x64.msi"
 $DNS = "DNS=8.8.8.8"
 #============================================================================
 # OPTIONAL FIELDS:
+# Define the credentials (replace with your actual username and password)
+$username = "Clinilabs-DC\dcdmastr"
+$password = ConvertTo-SecureString "GnZa2b3sQ!" -AsPlainText -Force
+$credential = New-Object System.Management.Automation.PSCredential ($username, $password)
 #============================================================================
 # When Taegis Agent needs to communicate via your internal proxy server, uncomment the below to use $Proxy:
 # $Proxy = "PROXY=1.2.3.4:8080"
